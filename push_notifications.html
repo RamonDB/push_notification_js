@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+<style type="text/css">
+
+</style>
+<head>
+	<title>Menu responsivo</title>
+</head>
+<body>
+	<header>
+
+        </header>
+</body>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+<script>
+
+    if(push.permission.get() != 'granted') {
+        Push.Permission.request() //Pedir autorização do usuário
+    }
+    
+    //Push.Permission.get()
+    if(push.permission.get() == 'granted') { //Se a permissão for dada pelo usuário, executar isso \/
+    Push.create('Olá de Ramon!', {
+        body: 'Esta é uma notificação',
+        icon:'icon.png',
+        timeout:8000, //Timeout before notification closes automatically
+        vibrate: [100, 100, 100], // An array for viration pulses to mobile
+        onclick: function() {
+            // Callback when notification is clicked
+            window.locatoin.href="https://google.com.br"
+        }
+    })
+    };
+
+</script>
+</body>
+
+</html>
